@@ -2,7 +2,7 @@
 **Паттерн проектирования:** Прототип (Prototype)
 **Дисциплина:** Объектно-ориентированный анализ и проектирование (ООАП)
 **Приложение:** HR Tool — Система управления персоналом (Flask, Python)
-**Live Demo:** https://umut.ipmkn.ru(it includes pythonanywhere.com, which sometimes cannot load with Russian IP)
+**Live Demo:** https://umut.ipmkn.ru (it includes pythonanywhere.com, which sometimes cannot load with Russian IP)
 
 ## 1. Описание проблемы
 Система управления персоналом HR Tool должна поддерживать создание новых сотрудников и отделов на основе уже существующих — иными словами, клонирование объектов как шаблонов. 
@@ -132,3 +132,4 @@ cloned = dept.clone()        # ← Прототип (паттерн)
 
 
 ```
+
