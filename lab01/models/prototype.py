@@ -4,6 +4,15 @@ class OrgComponent:
     def clone(self):
         raise NotImplementedError
 
+    def add(self, component: "OrgComponent"):
+        raise TypeError(f"{self.__class__.__name__} is a leaf - can not add children")
+
+    def remove(self, component: "OrgComponent"):
+        raise TypeError(f"{self.__class__.__name__} is a leaf - can not remove children")
+
+    def get_children(self) -> list:
+        return[]
+
     def get_name(self) -> str:
         raise NotImplementedError
 
