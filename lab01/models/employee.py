@@ -17,7 +17,7 @@ STATUS_META = {
 
 
 class Employee(OrgComponent):
-    """Concrete Prototype — Leaf node."""
+    """Concrete Prototype — Leaf node (Composite pattern)."""
 
     def __init__(self, emp_id, name, position, salary,
                  status="Candidate", department_id=None):
@@ -43,6 +43,19 @@ class Employee(OrgComponent):
             status="Candidate",
             department_id=self.department_id,
         )
+
+    # ── Composite — Leaf stubs (NEW) ──────────────────────────
+    def add(self, component: OrgComponent):
+        """COMPOSITE: Leaf cannot have children."""
+        raise TypeError("Employee is a leaf node — cannot add children")
+
+    def remove(self, component: OrgComponent):
+        """COMPOSITE: Leaf cannot have children."""
+        raise TypeError("Employee is a leaf node — cannot remove children")
+
+    def get_children(self) -> list:
+        """COMPOSITE: Leaf always returns empty — uniform interface."""
+        return []
 
     # ── State transitions ─────────────────────────────────────
     def can_transition_to(self, new_status: str) -> bool:
