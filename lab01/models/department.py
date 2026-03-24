@@ -17,6 +17,9 @@ class Department(OrgComponent):
     def get_children(self):
         return list(self._children)
 
+    def remove(self, component: "OrgComponent"):
+        self._children.remove(component)
+
     # ── Prototype ─────────────────────────────────────────────
     def clone(self):
         """
