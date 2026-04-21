@@ -388,15 +388,6 @@ def get_employee_count(self):
 * диаграмму классов;
 * диаграмму состояний.
 
-В папке `docs` подготовлены вспомогательные материалы:
-
-* `docs/pure-uml-state-pattern-guide.md` — руководство для ручного построения pure UML;
-* `docs/state-pattern-class.mmd` — Mermaid-черновик диаграммы классов;
-* `docs/employee-lifecycle-state.mmd` — Mermaid-черновик диаграммы состояний;
-* `docs/state-pattern-class.puml` — PlantUML-черновик диаграммы классов;
-* `docs/employee-lifecycle-state.puml` — PlantUML-черновик диаграммы состояний.
-
-Важно: согласно требованиям преподавателя, итоговые диаграммы должны быть нарисованы вручную или в визуальном UML-редакторе. Mermaid и PlantUML можно использовать только как черновик.
 
 ### 8.1 Диаграмма классов
 
@@ -442,51 +433,7 @@ def get_employee_count(self):
 | **GUI** | Интерфейс сам должен знать правила переходов | Интерфейс отображает список `transitions` из модели |
 | **Тестируемость** | Сложно тестировать отдельные правила | Каждое состояние можно тестировать отдельно |
 
-## 10. Запуск проекта
-
-### 10.1 Python Flask
-
-```powershell
-cd C:\Users\umut0\Desktop\lab1_prototype
-py -m venv .venv
-.\.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-py app.py
-```
-
-После запуска открыть:
-
-```text
-http://127.0.0.1:5000
-```
-
-### 10.2 C# WinForms
-
-```powershell
-cd C:\Users\umut0\Desktop\lab1_prototype\HrStateWinForms
-$env:DOTNET_CLI_HOME='C:\Users\umut0\Desktop\lab1_prototype\.dotnet-home'
-$env:DOTNET_SKIP_FIRST_TIME_EXPERIENCE='1'
-dotnet run
-```
-
-## 11. Проверка корректности
-
-Проверены следующие сценарии:
-
-* создание нового сотрудника создаёт состояние `Candidate`;
-* `Candidate -> Active` выполняется успешно;
-* `Active -> OnLeave` выполняется успешно;
-* `OnLeave -> Active` выполняется успешно;
-* `Active -> Fired` выполняется успешно;
-* `OnLeave -> Fired` выполняется успешно;
-* переход из `Fired` в другое состояние запрещён;
-* `FiredState` возвращает `0` для фонда зарплат;
-* `FiredState` возвращает `0` для активной численности;
-* клонирование сотрудника создаёт нового сотрудника в состоянии `Candidate`;
-* клонирование отдела рекурсивно создаёт сотрудников-шаблоны;
-* Kanban pipeline строится на основе текущих состояний сотрудников.
-
-## 12. Вывод
+## 10. Вывод
 
 Применение паттерна Состояние в HR Tool позволило заменить строковые проверки и централизованные таблицы переходов на объектно-ориентированную модель жизненного цикла сотрудника.
 
