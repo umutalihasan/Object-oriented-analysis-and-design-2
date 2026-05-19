@@ -312,6 +312,7 @@ SessionLocal = async_sessionmaker(
     expire_on_commit=False,
     class_=AsyncSession
 )
+```
 Repository получает объект `session` через конструктор:
 
 ```python
